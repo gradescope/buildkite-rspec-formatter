@@ -1,5 +1,6 @@
 require "rspec/core/formatters/base_text_formatter"
 begin
+  require "capybara/rspec"
   require "capybara-inline-screenshot/rspec"
 rescue LoadError
 end
