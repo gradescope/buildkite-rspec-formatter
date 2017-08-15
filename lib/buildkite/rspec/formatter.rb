@@ -39,6 +39,11 @@ module Buildkite
         output.puts "--- –––"
       end
 
+      def dump_summary(summary)
+        output.puts "+++ Summary"
+        super
+      end
+
       private def prefix
         return "" if @group_level == 0
         "#{'  ' * [@group_level - 1, 0].max}⊢–"
