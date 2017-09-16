@@ -44,6 +44,16 @@ module Buildkite
         super
       end
 
+      def dump_failures(notification)
+        output.puts "--- Failures"
+        super
+      end
+
+      def dump_pending(notification)
+        output.puts "--- Pending"
+        super
+      end
+
       private def prefix
         return "" if @group_level == 0
         "#{'  ' * [@group_level - 1, 0].max}⊢–"
