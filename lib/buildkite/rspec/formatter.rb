@@ -45,7 +45,8 @@ module Buildkite
       end
 
       def dump_failures(notification)
-        output.puts "--- Failures"
+        return if notification.failure_notifications.empty?
+        output.puts "+++ Failures"
         super
       end
 
